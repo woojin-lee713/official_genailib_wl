@@ -8,6 +8,9 @@ authors = [
 requires-python = ">= 3.10"
 dependencies = []
 
+[project.scripts]
+wikiapp = "wikiapp.console:main"
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -20,6 +23,7 @@ platforms = ["osx-arm64"]
 wikiapp = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+program = "python wikiapp/console.py"
 
 [tool.pixi.dependencies]
 requests = ">=2.31.0,<2.32"

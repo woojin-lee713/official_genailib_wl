@@ -390,7 +390,7 @@ packages:
   name: wikiapp
   version: 0.1.0
   path: .
-  sha256: ebf6df8a89350a2ef449045a3cff796629931695a874e63c8fa9b60ed292333b
+  sha256: 1329ed3cc5e05f74218f3f8837d27c91a870b076b744d025f8206ca8b5757207
   requires_python: '>=3.10'
   editable: true
 - kind: conda
