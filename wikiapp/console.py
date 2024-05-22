@@ -6,10 +6,18 @@ import textwrap
 from wikiapp.wikipedia import API_URL, random_page
 
 @click.command()
+@click.option(
+    "--language",
+    "-1",
+    default="en",
+    help= "gets random page from wikipedia in given language",
+    metavar="LANG",
+    show_default=True,
+)
 @click.version_option(version=__version__)
-def main():
+def main(language="en"):
     """The ultramodern Python project."""
-    data = random_page()
+    data = random_page(language=language)
     title = data["title"]
     extract = data["extract"]
     click.secho(title, fg="green")

@@ -11,16 +11,13 @@ dependencies = []
 [project.scripts]
 wikiapp = "wikiapp.console:main"
 
-[project.optional-dependencies]
-test = ["coverage[toml]"]
-
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [tool.pixi.project]
 channels = ["conda-forge"]
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64", "osx-64", "win-64"]
 
 [tool.pixi.pypi-dependencies]
 wikiapp = { path = ".", editable = true }
@@ -34,8 +31,8 @@ click = ">=8.1.7,<8.2"
 
 [tool.pixi.feature.test.dependencies]
 pytest = ">=7.2.0,<8.3"
-pytest-mock = ">=3.14.0,<3.15"
 pytest-cov = ">=5.0.0,<5.1"
+pytest-mock = ">=3.14.0,<3.15"
 
 [tool.pixi.feature.test.tasks]
 test = "pytest"
