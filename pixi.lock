@@ -45,6 +45,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/charset-normalizer-3.3.2-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/click-8.1.7-unix_pyh707e725_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/colorama-0.4.6-pyhd8ed1ab_0.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/coverage-7.5.1-py312h7e5086c_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/exceptiongroup-1.2.0-pyhd8ed1ab_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/idna-3.7-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/iniconfig-2.0.0-pyhd8ed1ab_0.conda
@@ -59,11 +60,14 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/pluggy-1.5.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pysocks-1.7.1-pyha2e5f31_6.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytest-8.2.1-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/pytest-cov-5.0.0-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/pytest-mock-3.14.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python-3.12.3-h4a7b5fc_0_cpython.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/python_abi-3.12-4_cp312.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/readline-8.2-h92ec313_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/requests-2.31.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/tk-8.6.13-h5083fa2_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/toml-0.10.2-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/tomli-2.0.1-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2024a-h0c530f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/urllib3-2.2.1-pyhd8ed1ab_0.conda
@@ -184,6 +188,26 @@ packages:
   - pkg:pypi/colorama
   size: 25170
   timestamp: 1666700778190
+- kind: conda
+  name: coverage
+  version: 7.5.1
+  build: py312h7e5086c_0
+  subdir: osx-arm64
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/coverage-7.5.1-py312h7e5086c_0.conda
+  sha256: dc3d6d36edd2587da94cd0045ccf3460cf84ce77a40f62db4a75d3653e96c8d6
+  md5: 08067b92914143861a65b650dd0af4d0
+  depends:
+  - __osx >=11.0
+  - python >=3.12,<3.13.0a0
+  - python >=3.12,<3.13.0a0 *_cpython
+  - python_abi 3.12.* *_cp312
+  - tomli
+  license: Apache-2.0
+  license_family: APACHE
+  purls:
+  - pkg:pypi/coverage
+  size: 359716
+  timestamp: 1714846946149
 - kind: conda
   name: exceptiongroup
   version: 1.2.0
@@ -409,6 +433,44 @@ packages:
   size: 257189
   timestamp: 1716221414386
 - kind: conda
+  name: pytest-cov
+  version: 5.0.0
+  build: pyhd8ed1ab_0
+  subdir: noarch
+  noarch: python
+  url: https://conda.anaconda.org/conda-forge/noarch/pytest-cov-5.0.0-pyhd8ed1ab_0.conda
+  sha256: 218306243faf3c36347131c2b36bb189daa948ac2e92c7ab52bb26cc8c157b3c
+  md5: c54c0107057d67ddf077751339ec2c63
+  depends:
+  - coverage >=5.2.1
+  - pytest >=4.6
+  - python >=3.8
+  - toml
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/pytest-cov
+  size: 25507
+  timestamp: 1711411153367
+- kind: conda
+  name: pytest-mock
+  version: 3.14.0
+  build: pyhd8ed1ab_0
+  subdir: noarch
+  noarch: python
+  url: https://conda.anaconda.org/conda-forge/noarch/pytest-mock-3.14.0-pyhd8ed1ab_0.conda
+  sha256: f7cd8910ce3690a9189483f4b01dde1970b2b86ea853a03b1225f344f988045d
+  md5: 4b9b5e086812283c052a9105ab1e254e
+  depends:
+  - pytest >=5.0
+  - python >=3.8
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/pytest-mock
+  size: 21860
+  timestamp: 1711072510934
+- kind: conda
   name: python
   version: 3.12.3
   build: h4a7b5fc_0_cpython
@@ -503,6 +565,23 @@ packages:
   size: 3145523
   timestamp: 1699202432999
 - kind: conda
+  name: toml
+  version: 0.10.2
+  build: pyhd8ed1ab_0
+  subdir: noarch
+  noarch: python
+  url: https://conda.anaconda.org/conda-forge/noarch/toml-0.10.2-pyhd8ed1ab_0.tar.bz2
+  sha256: f0f3d697349d6580e4c2f35ba9ce05c65dc34f9f049e85e45da03800b46139c1
+  md5: f832c45a477c78bebd107098db465095
+  depends:
+  - python >=2.7
+  license: MIT
+  license_family: MIT
+  purls:
+  - pkg:pypi/toml
+  size: 18433
+  timestamp: 1604308660817
+- kind: conda
   name: tomli
   version: 2.0.1
   build: pyhd8ed1ab_0
@@ -554,7 +633,9 @@ packages:
   name: wikiapp
   version: 0.1.0
   path: .
-  sha256: b361cd0f05a210ed94f2a92cfe8078a204af02c5bad49e9ce049aee3817414cd
+  sha256: 746b7a18b77c1784f4e6dd96c75548696935c2bc55fad24a98be86ab420cb73b
+  requires_dist:
+  - coverage[toml] ; extra == 'test'
   requires_python: '>=3.10'
   editable: true
 - kind: conda
