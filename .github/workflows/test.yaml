@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  tests-per-env:
+    strategy:
+      matrix:
+        environment: [test, py310test, py311test]
+        os: [ubuntu-latest, macos-latest, macos-12, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup pixi
+        uses: prefix-dev/setup-pixi@v0.6.0
+        with:
+          environments: ${{ matrix.environment }}
+      - name: Test with Pixi
+        run: |
+          pixi run --environment ${{ matrix.environment }} test
