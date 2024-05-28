@@ -1,16 +1,17 @@
-import click
-from wikiapp import __version__
-import requests
 import textwrap
 
-from wikiapp.wikipedia import API_URL, random_page
+import click
+
+from wikiapp import __version__
+from wikiapp.wikipedia import random_page
+
 
 @click.command()
 @click.option(
     "--language",
     "-1",
     default="en",
-    help= "gets random page from wikipedia in given language",
+    help="gets random page from wikipedia in given language",
     metavar="LANG",
     show_default=True,
 )
@@ -24,5 +25,5 @@ def main(language):
     click.echo(textwrap.fill(extract))
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
