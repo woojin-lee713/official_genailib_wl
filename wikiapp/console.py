@@ -16,7 +16,7 @@ from wikiapp.wikipedia import random_page
     show_default=True,
 )
 @click.version_option(version=__version__)
-def main(language):
+def main(language: str) -> None:
     """The ultramodern Python project."""
     data = random_page(language=language)
     title = data["title"]
