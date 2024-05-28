@@ -58,6 +58,9 @@ format = "ruff format"
 [tool.pixi.feature.typing.dependencies]
 mypy = ">=0.812,<1.11"
 
+[tool.pixi.feature.typing.tasks]
+typing = "mypy ."
+
 [tool.pixi.environments]
 default = { solve-group = "default" } #includes defualut
 test = { features = ["test"], solve-group = "default" } #includes default, test
