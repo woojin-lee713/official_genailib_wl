@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "wikipedia.html",
+    "href": "wikipedia.html",
+    "title": "Wikipedia Module",
+    "section": "",
+    "text": "from wikiapp.wikipedia import random_page, Page\nfrom nbdev import show_doc",
+    "crumbs": [
+      "Wikipedia Module"
+    ]
+  },
+  {
+    "objectID": "wikipedia.html#examples",
+    "href": "wikipedia.html#examples",
+    "title": "Wikipedia Module",
+    "section": "Examples",
+    "text": "Examples\n\npage = random_page()\nprint(\"TITLE\", page.title)\nprint(\"EXTRACT\", page.extract)\n\nTITLE Tiruppavai\nEXTRACT The Tiruppavai is a set of Tamil Hindu hymns attributed to the female poet-saint Andal.\n\n\nIf you do this agian, you will get another random page:\n\npage = random_page()\nprint(\"TITLE\", page.title)\nprint(\"EXTRACT\", page.extract)\n\nTITLE Myntra\nEXTRACT Myntra is an Indian fashion e-commerce company headquartered in Bengaluru, Karnataka, India. The company was founded in 2007-2008 to sell personalized gift items. In May 2014, Myntra.com was acquired by Flipkart.\n\n\nYou can change the language\n\npage = random_page(language=\"fr\")\nprint(\"TITLE\", page.title)\nprint(\"EXTRACT\", page.extract)\n\nTITLE La Soumission du prince Dipo Negoro au général De Kock\nEXTRACT La Soumission du prince Dipo Negoro au général De Kock est un tableau peint par Nicolaas Pieneman vers 1830-1835.",
+    "crumbs": [
+      "Wikipedia Module"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Wikiapp Docs",
+    "section": "",
+    "text": "Welcome to the documentation for Wikiapp! We are so glad top have you here.\nThis library will let you get random wikipedia excerpts, in any language.\nYeah we know it does not do much! But it is a start.\nwikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev ❯ wikiapp Potton–Hayden House The Potton–Hayden House is a historic house in Big Spring, Texas, USA. It was built in 1901. It has been listed on the National Register of Historic Places since April 14, 1975.\nwikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev ❯ wikiapp –language fr Wim Rijsbergen Wilhelmus « Wim » Gerardus Rijsbergen est un footballeur néerlandais. Il évolue au poste de défenseur puis se reconvertit comme entraîneur.\nwikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev ❯ wikiapp -1 de\nDie Armen Die Armen ist ein Roman von Heinrich Mann. Der Text wurde im Sommer 1916 in Oberbayern konzipiert, bis zum April 1917 in München geschrieben und erschien im August desselben Jahres.",
+    "crumbs": [
+      "Wikiapp Docs"
+    ]
+  },
+  {
+    "objectID": "console.html",
+    "href": "console.html",
+    "title": "Console Module",
+    "section": "",
+    "text": "from wikiapp.console import main\nfrom nbdev import show_doc",
+    "crumbs": [
+      "Console Module"
+    ]
+  },
+  {
+    "objectID": "console.html#examples",
+    "href": "console.html#examples",
+    "title": "Console Module",
+    "section": "Examples",
+    "text": "Examples\n\nCliRunner.invoke(main)",
+    "crumbs": [
+      "Console Module"
+    ]
+  }
+]

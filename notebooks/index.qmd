@@ -1,0 +1,29 @@
+---
+title: Wikiapp Docs
+---
+
+Welcome to the documentation for Wikiapp! We are so glad top have you here.
+
+This library will let you get random wikipedia excerpts, in any language.
+
+Yeah we know it does not do much! But it is a start.
+
+wikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev
+❯ wikiapp
+Potton–Hayden House
+The Potton–Hayden House is a historic house in Big Spring, Texas, USA.
+It was built in 1901. It has been listed on the National Register of
+Historic Places since April 14, 1975.
+
+wikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev
+❯ wikiapp --language fr
+Wim Rijsbergen
+Wilhelmus « Wim » Gerardus Rijsbergen est un footballeur néerlandais.
+Il évolue au poste de défenseur puis se reconvertit comme entraîneur.
+
+wikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev
+❯ wikiapp -1 de
+Die Armen
+Die Armen ist ein Roman von Heinrich Mann. Der Text wurde im Sommer
+1916 in Oberbayern konzipiert, bis zum April 1917 in München
+geschrieben und erschien im August desselben Jahres.

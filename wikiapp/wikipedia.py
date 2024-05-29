@@ -9,11 +9,15 @@ API_URL = "https://{language}.wikipedia.org/api/rest_v1/page/random/summary"
 
 
 class Page(BaseModel):
-    title: str
-    extract: str
+    "A Page Dataclass to represent the return value from wikipedia"
+
+    title: str  # the title of the wikipedia page
+    extract: str  # the extract of the wikipedia page
 
 
-def random_page(language: str = "en") -> Page:
+def random_page(
+    language: str = "en",  # The language you want to use, as a two character string
+) -> Page:  # Return a Page object
     """Get a random page from Wikipedia"""
     try:
         with requests.get(API_URL.format(language=language), timeout=10) as response:

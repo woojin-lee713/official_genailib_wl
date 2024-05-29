@@ -11,9 +11,16 @@ dependencies = []
 [project.scripts]
 wikiapp = "wikiapp.console:main"
 
+[project.optional-dependencies]
+test = ["coverage[toml]"]
+docs = ["nbdev"]
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["wikiapp"]
 
 [tool.pixi.project]
 channels = ["conda-forge"]
@@ -63,10 +70,19 @@ mypy = ">=0.812,<1.11"
 [tool.pixi.feature.typing.tasks]
 typing = "mypy ."
 
+[tool.pixi.feature.docs.dependencies]
+quarto = ">=1.4.550,<1.5"
+jupyterlab = ">=1.0.10,<4.3"
+
 [tool.pixi.environments]
 default = { solve-group = "default" } #includes defualut
 test = { features = ["test"], solve-group = "default" } #includes default, test
-dev = { features = ["test", "lintformat", "typing"], solve-group = "default" }
+dev = { features = [
+    "test",
+    "lintformat",
+    "typing",
+    "docs",
+], solve-group = "default" }
 py310test = { features = [
     "test",
     "py310",
