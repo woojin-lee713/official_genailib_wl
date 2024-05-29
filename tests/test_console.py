@@ -55,6 +55,8 @@ def test_main_print_message_on_request_error(
     assert "Error" in result.output
 
 
+@pytest.mark.e2e
 def test_main_succeeds(runner: CliRunner) -> None:
     result = runner.invoke(console.main)
+    print(">>>", result.output)
     assert result.exit_code == 0
