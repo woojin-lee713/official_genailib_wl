@@ -28,6 +28,7 @@ program = "python wikiapp/console.py"
 [tool.pixi.dependencies]
 requests = ">=2.31.0,<2.32"
 click = ">=8.1.7,<8.2"
+pydantic = ">=2.7.2,<2.8"
 
 [tool.pixi.feature.test.dependencies]
 pytest = ">=7.2.0,<8.3"
