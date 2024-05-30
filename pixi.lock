@@ -314,7 +314,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.17.0-pyhd8ed1ab_0.conda
       - pypi: https://files.pythonhosted.org/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fb/c2/f2bf7d821f04556efde49a1af531bdf287b27c19225852287cbfca953300/execnb-0.1.6-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/52/29/1eefae78398506cc5a862301b1ebdea1c047bb3546964792570302564265/fastcore-1.5.41-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/29/84/b2ebc7995de28820db780afb13c0045bbe25ce7d5e130c09f548440ae708/fastcore-1.5.42-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/6c/2913287a13bc1a5233836d66c3efd6d7bd7d6625fb37c31d36429dec44a4/ghapi-1.0.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/7c/3d544278e57fa7d10d6be101889d0d10d1f0b85c105d4b1271d14435533c/nbdev-2.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8a/6a/19e9fe04fca059ccf770861c7d5721ab4c2aebc539889e97c7977528a53b/pip-24.0-py3-none-any.whl
@@ -486,7 +486,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.17.0-pyhd8ed1ab_0.conda
       - pypi: https://files.pythonhosted.org/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fb/c2/f2bf7d821f04556efde49a1af531bdf287b27c19225852287cbfca953300/execnb-0.1.6-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/52/29/1eefae78398506cc5a862301b1ebdea1c047bb3546964792570302564265/fastcore-1.5.41-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/29/84/b2ebc7995de28820db780afb13c0045bbe25ce7d5e130c09f548440ae708/fastcore-1.5.42-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/6c/2913287a13bc1a5233836d66c3efd6d7bd7d6625fb37c31d36429dec44a4/ghapi-1.0.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/7c/3d544278e57fa7d10d6be101889d0d10d1f0b85c105d4b1271d14435533c/nbdev-2.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8a/6a/19e9fe04fca059ccf770861c7d5721ab4c2aebc539889e97c7977528a53b/pip-24.0-py3-none-any.whl
@@ -658,7 +658,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.17.0-pyhd8ed1ab_0.conda
       - pypi: https://files.pythonhosted.org/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fb/c2/f2bf7d821f04556efde49a1af531bdf287b27c19225852287cbfca953300/execnb-0.1.6-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/52/29/1eefae78398506cc5a862301b1ebdea1c047bb3546964792570302564265/fastcore-1.5.41-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/29/84/b2ebc7995de28820db780afb13c0045bbe25ce7d5e130c09f548440ae708/fastcore-1.5.42-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/6c/2913287a13bc1a5233836d66c3efd6d7bd7d6625fb37c31d36429dec44a4/ghapi-1.0.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/7c/3d544278e57fa7d10d6be101889d0d10d1f0b85c105d4b1271d14435533c/nbdev-2.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8a/6a/19e9fe04fca059ccf770861c7d5721ab4c2aebc539889e97c7977528a53b/pip-24.0-py3-none-any.whl
@@ -829,7 +829,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/zipp-3.17.0-pyhd8ed1ab_0.conda
       - pypi: https://files.pythonhosted.org/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fb/c2/f2bf7d821f04556efde49a1af531bdf287b27c19225852287cbfca953300/execnb-0.1.6-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/52/29/1eefae78398506cc5a862301b1ebdea1c047bb3546964792570302564265/fastcore-1.5.41-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/29/84/b2ebc7995de28820db780afb13c0045bbe25ce7d5e130c09f548440ae708/fastcore-1.5.42-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/71/6c/2913287a13bc1a5233836d66c3efd6d7bd7d6625fb37c31d36429dec44a4/ghapi-1.0.5-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/24/7c/3d544278e57fa7d10d6be101889d0d10d1f0b85c105d4b1271d14435533c/nbdev-2.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8a/6a/19e9fe04fca059ccf770861c7d5721ab4c2aebc539889e97c7977528a53b/pip-24.0-py3-none-any.whl
@@ -1684,28 +1684,6 @@ packages:
   - pkg:pypi/beautifulsoup4
   size: 118200
   timestamp: 1705564819537
-- kind: conda
-  name: bleach
-  version: 6.1.0
-  build: pyhd8ed1ab_0
-  subdir: noarch
-  noarch: python
-  url: https://conda.anaconda.org/conda-forge/noarch/bleach-6.1.0-pyhd8ed1ab_0.conda
-  sha256: 845e77ef495376c5c3c328ccfd746ca0ef1978150cae8eae61a300fe7755fb08
-  md5: 0ed9d7c0e9afa7c025807a9a8136ea3e
-  depends:
-  - packaging
-  - python >=3.6
-  - setuptools
-  - six >=1.9.0
-  - webencodings
-  license: Apache-2.0
-  license_family: Apache
-  purls:
-  - pkg:pypi/html5lib
-  - pkg:pypi/bleach
-  size: 131220
-  timestamp: 1696630354218
 - kind: conda
   name: bleach
   version: 6.1.0
@@ -2984,9 +2962,9 @@ packages:
   timestamp: 1698580072627
 - kind: pypi
   name: fastcore
-  version: 1.5.41
-  url: https://files.pythonhosted.org/packages/52/29/1eefae78398506cc5a862301b1ebdea1c047bb3546964792570302564265/fastcore-1.5.41-py3-none-any.whl
-  sha256: 9cd05cd07e32077004004e1105213249ad3a8e113e7dd599b9648fe46a27d75b
+  version: 1.5.42
+  url: https://files.pythonhosted.org/packages/29/84/b2ebc7995de28820db780afb13c0045bbe25ce7d5e130c09f548440ae708/fastcore-1.5.42-py3-none-any.whl
+  sha256: 9f749a7aa4aeff37446bf114edafcac277ffb12cfef29f8219d5928b447e5486
   requires_dist:
   - packaging
   - numpy ; extra == 'dev'
@@ -7643,8 +7621,8 @@ packages:
 - kind: pypi
   name: watchdog
   version: 4.0.1
-  url: https://files.pythonhosted.org/packages/a9/eb/8d1f9150dd5e86082913ab15d4fd4bea436186845be1b1752efd19b020d1/watchdog-4.0.1-cp312-cp312-macosx_10_9_x86_64.whl
-  sha256: 611be3904f9843f0529c35a3ff3fd617449463cb4b73b1633950b3d97fa4bfb7
+  url: https://files.pythonhosted.org/packages/52/67/62eea67ef31214ea4867b97351ea4f6b3a52dd1c4c93360ff8ad6e4ad72f/watchdog-4.0.1-cp312-cp312-macosx_11_0_arm64.whl
+  sha256: 62c613ad689ddcb11707f030e722fa929f322ef7e4f18f5335d2b73c61a85c28
   requires_dist:
   - pyyaml>=3.10 ; extra == 'watchmedo'
   requires_python: '>=3.8'
@@ -7659,16 +7637,16 @@ packages:
 - kind: pypi
   name: watchdog
   version: 4.0.1
-  url: https://files.pythonhosted.org/packages/52/67/62eea67ef31214ea4867b97351ea4f6b3a52dd1c4c93360ff8ad6e4ad72f/watchdog-4.0.1-cp312-cp312-macosx_11_0_arm64.whl
-  sha256: 62c613ad689ddcb11707f030e722fa929f322ef7e4f18f5335d2b73c61a85c28
+  url: https://files.pythonhosted.org/packages/24/01/a4034a94a5f1828eb050230e7cf13af3ac23cf763512b6afe008d3def97c/watchdog-4.0.1-py3-none-manylinux2014_x86_64.whl
+  sha256: ac7041b385f04c047fcc2951dc001671dee1b7e0615cde772e84b01fbf68ee84
   requires_dist:
   - pyyaml>=3.10 ; extra == 'watchmedo'
   requires_python: '>=3.8'
 - kind: pypi
   name: watchdog
   version: 4.0.1
-  url: https://files.pythonhosted.org/packages/24/01/a4034a94a5f1828eb050230e7cf13af3ac23cf763512b6afe008d3def97c/watchdog-4.0.1-py3-none-manylinux2014_x86_64.whl
-  sha256: ac7041b385f04c047fcc2951dc001671dee1b7e0615cde772e84b01fbf68ee84
+  url: https://files.pythonhosted.org/packages/a9/eb/8d1f9150dd5e86082913ab15d4fd4bea436186845be1b1752efd19b020d1/watchdog-4.0.1-cp312-cp312-macosx_10_9_x86_64.whl
+  sha256: 611be3904f9843f0529c35a3ff3fd617449463cb4b73b1633950b3d97fa4bfb7
   requires_dist:
   - pyyaml>=3.10 ; extra == 'watchmedo'
   requires_python: '>=3.8'
@@ -7754,7 +7732,7 @@ packages:
   name: wikiapp
   version: 0.1.0
   path: .
-  sha256: 497285003efe95b512e93129cca42cd4f90dd2e9c0639dc4d8bb1a3fcff94980
+  sha256: 87937da1a700252656d3d84f3b9723d781f7b20d5096d7d3d739c8caed966128
   requires_dist:
   - coverage[toml] ; extra == 'test'
   - nbdev ; extra == 'docs'

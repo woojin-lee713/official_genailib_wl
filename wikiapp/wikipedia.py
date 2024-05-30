@@ -1,8 +1,5 @@
-from typing import Any
-
 import click
 import requests
-
 from pydantic import BaseModel, ValidationError
 
 API_URL = "https://{language}.wikipedia.org/api/rest_v1/page/random/summary"

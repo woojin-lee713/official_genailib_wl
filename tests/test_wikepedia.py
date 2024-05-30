@@ -1,7 +1,7 @@
 from unittest.mock import Mock
 
-from click.exceptions import ClickException
 import pytest
+from click.exceptions import ClickException
 
 from wikiapp import wikipedia
 
