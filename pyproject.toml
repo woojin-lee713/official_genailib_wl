@@ -77,14 +77,26 @@ jupyterlab = ">=1.0.10,<4.3"
 [tool.pixi.feature.docs.tasks]
 docs = "mkdir -p docs; cd notebooks; nbdev_docs; cp -r _docs/* ../docs/; cd .."
 
+[tool.pixi.feature.build.dependencies]
+build = ">=0.7.0,<0.8"
+twine = ">=3.3.0,<5.2"
+
+[tool.pixi.feature.build.tasks]
+build = "python -m build"
+publish = "python -m twine upload --repository testpypi dist/*"
+
 [tool.pixi.environments]
 default = { solve-group = "default" } #includes defualut
 test = { features = ["test"], solve-group = "default" } #includes default, test
+build = { features = [
+    "build",
+], solve-group = "default" } #includes default, build
 dev = { features = [
     "test",
     "lintformat",
     "typing",
     "docs",
+    "build",
 ], solve-group = "default" }
 py310test = { features = [
     "test",
