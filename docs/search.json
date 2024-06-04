@@ -4,7 +4,7 @@
     "href": "wikipedia.html",
     "title": "Wikipedia Module",
     "section": "",
-    "text": "from wikiapp.wikipedia import random_page, Page\nfrom nbdev import show_doc",
+    "text": "from wikiapp.wikipedia import random_page, Page\n\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:7: UserWarning: Could not determine version of wikiapp_rd\n  warnings.warn(\"Could not determine version of wikiapp_rd\", stacklevel=1)\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:8: UserWarning: No package metadata was found for wikiapp_rd\n  warnings.warn(str(e), stacklevel=1)\nfrom nbdev import show_doc",
     "crumbs": [
       "Wikipedia Module"
     ]
@@ -34,7 +34,7 @@
     "href": "console.html",
     "title": "Console Module",
     "section": "",
-    "text": "from wikiapp.console import main\nfrom nbdev import show_doc",
+    "text": "from wikiapp.console import main\n\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:7: UserWarning: Could not determine version of wikiapp_rd\n  warnings.warn(\"Could not determine version of wikiapp_rd\", stacklevel=1)\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:8: UserWarning: No package metadata was found for wikiapp_rd\n  warnings.warn(str(e), stacklevel=1)\nfrom nbdev import show_doc",
     "crumbs": [
       "Console Module"
     ]
