@@ -28,6 +28,9 @@
 
 
 import openai
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 import click
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -40,26 +43,23 @@ logger = logging.getLogger(__name__)
 
 # Load environment variables
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 class ChatResponse(BaseModel):
     text: str  # The response text from OpenAI
 
 def get_chat_response(prompt: str = "Tell me a joke") -> ChatResponse:
     try:
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": prompt}]
-        )
-        chat_text = response['choices'][0]['message']['content']
+        response = client.chat.completions.create(model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": prompt}])
+        chat_text = response.choices[0].message.content
         return ChatResponse(text=chat_text)
-    except openai.error.APIError as e:
+    except openai.APIError as e:
         logger.error("API error occurred", exc_info=True)
         message = f"API error: {str(e)}"
-    except openai.error.InvalidRequestError as e:
+    except openai.InvalidRequestError as e:
         logger.error("Invalid request error occurred", exc_info=True)
         message = f"Invalid request: {str(e)}"
-    except openai.error.AuthenticationError as e:
+    except openai.AuthenticationError as e:
         logger.error("Authentication error occurred", exc_info=True)
         message = f"Authentication error: {str(e)}"
     except Exception as e:
