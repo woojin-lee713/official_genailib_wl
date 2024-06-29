@@ -1,24 +1,28 @@
-import os
-from dotenv import load_dotenv
 import openai
+from dotenv import load_dotenv
+import os
 
-# Load environment variables
+# Load environment variables from a .env file
 load_dotenv()
 
+# Get the API key from the environment variables
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 # Ensure the API key is set
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    print("API key is not set.")
+if not openai.api_key:
+    print("API key is not set. Please check your .env file.")
 else:
     try:
-        openai.api_key = api_key
+        # Make a request to the OpenAI API using the new method
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You have the following task:"},
+                {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": "Tell me a joke"}
             ]
         )
-        print(response.choices[0].message["content"].strip())
+        # Print the joke
+        print(response['choices'][0]['message']['content'].strip())
     except Exception as e:
+        # Handle any potential errors
         print(f"An error occurred: {e}")
