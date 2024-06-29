@@ -1,0 +1,4 @@
+python-dotenv==1.0.1
+click==8.0.4
+openai==0.10.2
+
