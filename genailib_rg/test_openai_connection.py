@@ -1,6 +1,7 @@
+import os
+
 import openai
 from dotenv import load_dotenv
-import os
 
 # Load environment variables from a .env file
 load_dotenv()
@@ -18,11 +19,11 @@ else:
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "Tell me a joke"}
-            ]
+                {"role": "user", "content": "Tell me a joke"},
+            ],
         )
         # Print the joke
-        print(response['choices'][0]['message']['content'].strip())
+        print(response["choices"][0]["message"]["content"].strip())
     except Exception as e:
         # Handle any potential errors
         print(f"An error occurred: {e}")
