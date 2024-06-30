@@ -31,13 +31,10 @@ def get_chat_response(prompt: str = "Tell me a joke") -> ChatResponse:
         )
         chat_text = response["choices"][0]["message"]["content"]
         return ChatResponse(text=chat_text)
-    except openai.error.OpenAIError as e:  # Using the base OpenAIError
-        logger.error("API error occurred", exc_info=True)
-        message = f"API error: {str(e)}"
-    except openai.error.InvalidRequestError as e:
-        logger.error("Invalid request error occurred", exc_info=True)
-        message = f"Invalid request: {str(e)}"
-    except openai.error.AuthenticationError as e:
+    except openai.BadRequestError as e:
+        logger.error("Bad request Error", exc_info=True)
+        message = f"Bad request: {str(e)}"
+    except openai.AuthenticationError as e:
         logger.error("Authentication error occurred", exc_info=True)
         message = f"Authentication error: {str(e)}"
     except Exception as e:

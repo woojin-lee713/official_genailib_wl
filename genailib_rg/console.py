@@ -1,9 +1,15 @@
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import click
 from dotenv import load_dotenv
 
 from genailib_rg.genailib_rg_sub import __version__, get_chat_response
 
-load_dotenv()  # This loads the environment variables from the .env file
+# Load environment variables
+load_dotenv()
 
 
 @click.command()
@@ -24,8 +30,10 @@ def main(prompt: str) -> None:
     try:
         response = get_chat_response(prompt=prompt)
         click.secho(response.text, fg="green")
+    except click.ClickException as e:
+        click.secho(f"Failed to fetch response: {e}", fg="red")
     except Exception as e:
-        click.secho("Failed to fetch response: " + str(e), fg="red")
+        click.secho(f"An unexpected error occurred: {e}", fg="red")
 
 
 if __name__ == "__main__":
