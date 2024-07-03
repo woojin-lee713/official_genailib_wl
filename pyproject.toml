@@ -103,16 +103,23 @@ dev = { features = [
 py310test = { features = ["test", "py310"], solve-group = "py310" }
 py311test = { features = ["test", "py311"], solve-group = "py311" }
 
+[tool.pixi.dependencies]
+pytest = ">=8.2.2,<8.3"
+
 [tool.pyright]
 venvPath = "."
 venv = ".pixi/envs/test"
+
+[tool.pytest.ini_options]
+markers = ["e2e: mark a test as an end-to-end test."]
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "C", "B", "I", "S", "ANN"]
 ignore = [
     "S101",   # Ignore asserts
     "E203",   # Don't complain about whitespace before the colon
-    "ANN401",
+    "ANN401", # Ignore Missing or incorrect function type annotations
+    "S603",   # Subprocess call with shell=True detected, which poses a security risk
 ]
 mccabe.max-complexity = 10
 

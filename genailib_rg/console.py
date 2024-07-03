@@ -1,12 +1,14 @@
 import os
 import sys
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 import click
 from dotenv import load_dotenv
 
-from genailib_rg.genailib_rg_sub import __version__, get_chat_response
+# Add the parent directory to the sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+# Import version and the get_chat_responses function
+from genailib_rg.genailib_rg_sub import __version__, get_chat_responses
 
 # Load environment variables
 load_dotenv()
@@ -24,12 +26,13 @@ load_dotenv()
 @click.version_option(version=__version__)
 def main(prompt: str) -> None:
     """
-    This is the console interface to the 'get_chat_response' function.
+    This is the console interface to the 'get_chat_responses' function.
     It interacts with OpenAI to get responses based on your prompt.
     """
     try:
-        response = get_chat_response(prompt=prompt)
-        click.secho(response.text, fg="green")
+        response = get_chat_responses(prompt=prompt)
+        click.secho("Connection was Successful", fg="green")
+        click.secho(response)
     except click.ClickException as e:
         click.secho(f"Failed to fetch response: {e}", fg="red")
     except Exception as e:

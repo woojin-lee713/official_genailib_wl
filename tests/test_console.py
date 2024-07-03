@@ -1,49 +1,142 @@
-from unittest.mock import Mock
+import subprocess
+from unittest.mock import MagicMock, Mock, patch
 
 import pytest
-from click.testing import CliRunner
-from pytest_mock import MockFixture
-
-from genailib_rg.console import main
 
 
-@pytest.fixture
-def runner() -> CliRunner:
-    return CliRunner()
+@patch("subprocess.run")
+def test_pixi_run_success(mock_subprocess_run: Mock) -> None:
+    """Test the pixi run command for success using mock"""
+    # Set up the mock to return a successful result
+    mock_result = MagicMock()
+    mock_result.returncode = 0
+    mock_result.stdout = "Pixi test run successful"
+    mock_result.stderr = ""
+    mock_subprocess_run.return_value = mock_result
 
-
-@pytest.fixture
-def mock_get_chat_response(mocker: MockFixture) -> Mock:
-    return mocker.patch(
-        "genailib_rg.genailib_rg_sub.get_chat_response",
-        return_value=Mock(text="Test response from OpenAI"),
+    result = subprocess.run(
+        ["/usr/bin/pixi", "run", "test"], capture_output=True, text=True, check=True
     )
 
-    def test_main_prints_response(
-        runner: CliRunner, mock_get_chat_response: Mock
-    ) -> None:
-        result = runner.invoke(main, ["--prompt", "Tell me something interesting"])
-        assert "Test response from OpenAI" in result.output
+    # Assertions
+    mock_subprocess_run.assert_called_once_with(
+        ["/usr/bin/pixi", "run", "test"], capture_output=True, text=True, check=True
+    )
+    assert result.returncode == 0, f"pixi run test failed: {result.stderr}"
+    assert result.stdout == "Pixi test run successful"
+    print("STDOUT:", result.stdout)
+    print("STDERR:", result.stderr)
 
 
-def test_main_invokes_openai_api(
-    runner: CliRunner, mock_get_chat_response: Mock
-) -> None:
-    runner.invoke(main, ["--prompt", "Hello"])
-    mock_get_chat_response.assert_called_with(prompt="Hello")
+@patch("subprocess.run")
+def test_pixi_run_failure(mock_subprocess_run: Mock) -> None:
+    """Test the pixi run command for failure using mock"""
+    # Set up the mock to return a failure result
+    mock_result = MagicMock()
+    mock_result.returncode = 1
+    mock_result.stdout = ""
+    mock_result.stderr = "Pixi test run failed"
+    mock_subprocess_run.return_value = mock_result
 
+    result = subprocess.run(
+        ["/usr/bin/pixi", "run", "test"], capture_output=True, text=True, check=True
+    )
 
-def test_main_fail_on_api_error(
-    runner: CliRunner, mock_get_chat_response: Mock
-) -> None:
-    mock_get_chat_response.side_effect = Exception("API Failure")
-    result = runner.invoke(main)
-    assert result.exit_code != 0
-    assert "Failed to fetch response: API Failure" in result.output
+    # Assertions
+    mock_subprocess_run.assert_called_once_with(
+        ["/usr/bin/pixi", "run", "test"], capture_output=True, text=True, check=True
+    )
+    assert result.returncode == 1, "pixi run test unexpectedly succeeded"
+    assert result.stderr == "Pixi test run failed"
+    print("STDOUT:", result.stdout)
+    print("STDERR:", result.stderr)
 
 
 @pytest.mark.e2e
-def test_main_succeeds(runner: CliRunner, mock_get_chat_response: Mock) -> None:
-    result = runner.invoke(main)
-    assert result.exit_code == 0
-    assert "Test response from OpenAI" in result.output
+@patch("subprocess.run")
+def test_console_e2e_success(mock_subprocess_run: Mock) -> None:
+    """Test the console.py script end-to-end for success"""
+    # Set up the mock to return a successful result
+    mock_result = MagicMock()
+    mock_result.returncode = 0
+    mock_result.stdout = "Connection was Successful\nThe capital of Mexico is Mexico City."
+    mock_result.stderr = ""
+    mock_subprocess_run.return_value = mock_result
+
+    result = subprocess.run(
+        [
+            "/usr/bin/python3",
+            "genailib_rg/console.py",
+            "-p",
+            "What is the capital of Mexico?",
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+
+    # Assertions
+    mock_subprocess_run.assert_called_once_with(
+        [
+            "/usr/bin/python3",
+            "genailib_rg/console.py",
+            "-p",
+            "What is the capital of Mexico?",
+        ],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    assert result.returncode == 0, f"console.py E2E test failed: {result.stderr}"
+    assert (
+        "Connection was Successful" in result.stdout
+    ), "Expected success message not found in output"
+    assert (
+        "The capital of Mexico is Mexico City." in result.stdout
+    ), "Expected response not found in output"
+    print("STDOUT:", result.stdout)
+    print("STDERR:", result.stderr)
+
+
+@pytest.mark.e2e
+@patch("subprocess.run")
+def test_console_e2e_failure(mock_subprocess_run: Mock) -> None:
+    """Test the console.py script end-to-end for failure with an invalid prompt"""
+    # Set up the mock to return a failure result
+    mock_result = MagicMock()
+    mock_result.returncode = 1
+    mock_result.stdout = "An unexpected error occurred"
+    mock_result.stderr = "Error"
+    mock_subprocess_run.return_value = mock_result
+
+    result = subprocess.run(
+        [
+            "/usr/bin/python3",
+            "genailib_rg/console.py",
+            "-p",
+            "",
+        ],  # Assuming empty prompt causes failure
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+
+    # Assertions
+    mock_subprocess_run.assert_called_once_with(
+        ["/usr/bin/python3", "genailib_rg/console.py", "-p", ""],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    assert (
+        result.returncode != 0
+    ), "console.py E2E test unexpectedly succeeded with empty prompt"
+    assert (
+        "An unexpected error occurred" in result.stdout
+    ), "Expected failure message not found in output"
+    print("STDOUT:", result.stdout)
+    print("STDERR:", result.stderr)
+
+
+if __name__ == "__main__":
+    pytest.main()
