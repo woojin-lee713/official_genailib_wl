@@ -1,1 +1,1 @@
-Sitemap: https://SGGmilagro.github.io/wikiapp/sitemap.xml
+Sitemap: https://woojin-lee713.github.io/official_genailib_wl/sitemap.xml

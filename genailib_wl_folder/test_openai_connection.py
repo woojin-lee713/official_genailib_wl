@@ -5,8 +5,8 @@ import click
 import openai
 from dotenv import load_dotenv
 
+# Add the parent directory to the sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 
 # Load environment variables from a .env file
 load_dotenv()
@@ -27,8 +27,8 @@ else:
             ],
             model="gpt-3.5-turbo",
         )
-        # To Provide the Command Line with more details
-        # about whether or not the connection to openai is successful
+        # To provide the command line with more details
+        # about whether or not the connection to OpenAI is successful
         click.secho("Connection was Successful", fg="green")
         # Print the joke
         print(response.choices[0].message.content)

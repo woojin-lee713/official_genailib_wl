@@ -2,8 +2,8 @@ project:
   output-dir: _docs
 
 website:
-  title: "wikiapp"
-  site-url: "https://SGGmilagro.github.io/wikiapp"
-  description: "Get Random Wikipedia Pages"
+  title: "official_genailib_wl"
+  site-url: "https://woojin-lee713.github.io/official_genailib_wl"
+  description: "OpenAI Chatbot Library Source Code Using OpenAI API"
   repo-branch: main
-  repo-url: "https://github.com/SGGmilagro/wikiapp"
+  repo-url: "https://github.com/woojin-lee713/official_genailib_wl"

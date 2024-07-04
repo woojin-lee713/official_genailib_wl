@@ -1,0 +1,24 @@
+---
+title: Genailib_wl Console Docs
+---
+
+Welcome to the console documentation for Genailib_wl! This guide will help you understand how to use the command-line interface to interact with OpenAI's chat API using the Genailib_wl library.
+
+### Usage
+
+To run the console interface, you can use the following command:
+
+```bash
+❯ python genailib_wl_folder/console.py
+# -p Tell me something interesting
+Connection was Successful
+[Response from OpenAI based on the default prompt]
+
+❯ python genailib_wl_folder/console.py --prompt "Tell me a joke"
+Connection was Successful
+Why don't scientists trust atoms? Because they make up everything!
+
+❯ python genailib_wl_folder/console.py -p "What's the weather like today?"
+Connection was Successful
+I'm sorry, I don't have access to real-time data. Please check a weather service.
+```

@@ -6,7 +6,12 @@ import pytest
 
 @patch("subprocess.run")
 def test_pixi_run_success(mock_subprocess_run: Mock) -> None:
-    """Test the pixi run command for success using mock"""
+    """
+    Test the pixi run command for success using mock.
+
+    Args:
+        mock_subprocess_run (Mock): The mocked 'subprocess.run' function.
+    """
     # Set up the mock to return a successful result
     mock_result = MagicMock()
     mock_result.returncode = 0
@@ -30,7 +35,12 @@ def test_pixi_run_success(mock_subprocess_run: Mock) -> None:
 
 @patch("subprocess.run")
 def test_pixi_run_failure(mock_subprocess_run: Mock) -> None:
-    """Test the pixi run command for failure using mock"""
+    """
+    Test the pixi run command for failure using mock.
+
+    Args:
+        mock_subprocess_run (Mock): The mocked 'subprocess.run' function.
+    """
     # Set up the mock to return a failure result
     mock_result = MagicMock()
     mock_result.returncode = 1
@@ -55,20 +65,25 @@ def test_pixi_run_failure(mock_subprocess_run: Mock) -> None:
 @pytest.mark.e2e
 @patch("subprocess.run")
 def test_console_e2e_success(mock_subprocess_run: Mock) -> None:
-    """Test the console.py script end-to-end for success"""
+    """
+    Test the console.py script end-to-end for success.
+
+    Args:
+        mock_subprocess_run (Mock): The mocked 'subprocess.run' function.
+    """
     # Set up the mock to return a successful result
     mock_result = MagicMock()
     mock_result.returncode = 0
-    mock_result.stdout = "Connection was Successful\nThe capital of Mexico is Mexico City."
+    mock_result.stdout = "Connection was Successful\nThe capital of France is Paris."
     mock_result.stderr = ""
     mock_subprocess_run.return_value = mock_result
 
     result = subprocess.run(
         [
             "/usr/bin/python3",
-            "genailib_rg/console.py",
+            "genailib_wl_folder/console.py",
             "-p",
-            "What is the capital of Mexico?",
+            "What is the capital of France?",
         ],
         capture_output=True,
         text=True,
@@ -79,9 +94,9 @@ def test_console_e2e_success(mock_subprocess_run: Mock) -> None:
     mock_subprocess_run.assert_called_once_with(
         [
             "/usr/bin/python3",
-            "genailib_rg/console.py",
+            "genailib_wl_folder/console.py",
             "-p",
-            "What is the capital of Mexico?",
+            "What is the capital of France?",
         ],
         capture_output=True,
         text=True,
@@ -92,7 +107,7 @@ def test_console_e2e_success(mock_subprocess_run: Mock) -> None:
         "Connection was Successful" in result.stdout
     ), "Expected success message not found in output"
     assert (
-        "The capital of Mexico is Mexico City." in result.stdout
+        "The capital of France is Paris." in result.stdout
     ), "Expected response not found in output"
     print("STDOUT:", result.stdout)
     print("STDERR:", result.stderr)
@@ -101,7 +116,12 @@ def test_console_e2e_success(mock_subprocess_run: Mock) -> None:
 @pytest.mark.e2e
 @patch("subprocess.run")
 def test_console_e2e_failure(mock_subprocess_run: Mock) -> None:
-    """Test the console.py script end-to-end for failure with an invalid prompt"""
+    """
+    Test the console.py script end-to-end for failure with an invalid prompt.
+
+    Args:
+        mock_subprocess_run (Mock): The mocked 'subprocess.run' function.
+    """
     # Set up the mock to return a failure result
     mock_result = MagicMock()
     mock_result.returncode = 1
@@ -112,7 +132,7 @@ def test_console_e2e_failure(mock_subprocess_run: Mock) -> None:
     result = subprocess.run(
         [
             "/usr/bin/python3",
-            "genailib_rg/console.py",
+            "genailib_wl_folder/console.py",
             "-p",
             "",
         ],  # Assuming empty prompt causes failure
@@ -123,7 +143,7 @@ def test_console_e2e_failure(mock_subprocess_run: Mock) -> None:
 
     # Assertions
     mock_subprocess_run.assert_called_once_with(
-        ["/usr/bin/python3", "genailib_rg/console.py", "-p", ""],
+        ["/usr/bin/python3", "genailib_wl_folder/console.py", "-p", ""],
         capture_output=True,
         text=True,
         check=True,

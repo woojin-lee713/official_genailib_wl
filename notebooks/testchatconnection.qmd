@@ -1,0 +1,19 @@
+---
+title: OpenAI Connection Checkup Docs
+---
+
+Welcome to the console documentation for interacting with OpenAI! This guide will help you understand how to use the command-line interface to interact with OpenAI's chat API using a simple script.
+
+### Usage
+
+To run the console interface, you can use the following command:
+
+```bash
+❯ python genailib_wl_folder/test_openai_connection.py
+Connection was Successful
+Why don't scientists trust atoms? Because they make up everything!
+
+❯ python genailib_wl_folder/test_openai_connection.py
+Connection Failed
+An error occurred: [Error message]
+```

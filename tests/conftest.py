@@ -1,19 +1,11 @@
-from typing import Any
-from unittest.mock import Mock
+def pytest_configure(config):
+    """
+    Configure pytest with custom markers.
 
-import pytest
-from pytest_mock import MockFixture
+    This function adds a custom marker 'e2e' to pytest configuration.
+    The 'e2e' marker is used to mark a test as an end-to-end test.
 
-
-def pytest_configure(config: Any) -> None:
-    config.addinivalue_line("markers", "e2e: mark as end-to-end test.")
-
-
-@pytest.fixture
-def mock_requests_get(mocker: MockFixture) -> Mock:
-    mock = mocker.patch("requests.get")
-    mock.return_value.__enter__.return_value.json.return_value = {
-        "title": "Lorem Ipsum",
-        "extract": "Lorem ipsum dolor sit amet",
-    }
-    return mock
+    Args:
+        config (pytest.Config): The pytest configuration object.
+    """
+    config.addinivalue_line("markers", "e2e: mark a test as an end-to-end test.")

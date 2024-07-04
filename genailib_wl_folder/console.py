@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 # Import version and the get_chat_responses function
-from genailib_rg.genailib_rg_sub import __version__, get_chat_responses
+from genailib_wl_folder.genailib_wl_file import __version__, get_chat_responses
 
 # Load environment variables
 load_dotenv()
@@ -28,6 +28,10 @@ def main(prompt: str) -> None:
     """
     This is the console interface to the 'get_chat_responses' function.
     It interacts with OpenAI to get responses based on your prompt.
+
+    Args:
+        prompt (str): The input text for the chat model,
+        provided via command line option.
     """
     try:
         response = get_chat_responses(prompt=prompt)

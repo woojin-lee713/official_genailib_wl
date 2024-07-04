@@ -1,29 +1,108 @@
 ---
-title: Wikiapp Docs
+title: OpenAI Chatbot Library Source Code Using OpenAI API
 ---
 
-Welcome to the documentation for Wikiapp! We are so glad top have you here.
+Welcome to the documentation for official_genailib_wl! We are excited to have you here.
 
-This library will let you get random wikipedia excerpts, in any language.
+This library allows you to interact with OpenAI's chat API with ease.
 
-Yeah we know it does not do much! But it is a start.
+Make sure to set your .env file up with an appropriate openAI API code and make sure you know that this is a strictly private key!
+You can not have it leaked to github or dokku!
 
-wikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev
-❯ wikiapp
-Potton–Hayden House
-The Potton–Hayden House is a historic house in Big Spring, Texas, USA.
-It was built in 1901. It has been listed on the National Register of
-Historic Places since April 14, 1975.
+Visit different pages to expereince what our chatbot can do!
+Yes, we know it is not as advanced but still, enjoy!
 
-wikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev
-❯ wikiapp --language fr
-Wim Rijsbergen
-Wilhelmus « Wim » Gerardus Rijsbergen est un footballeur néerlandais.
-Il évolue au poste de défenseur puis se reconvertit comme entraîneur.
+Below are commands you can run this repo in the terminal to generate tests and etc.
 
-wikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev
-❯ wikiapp -1 de
-Die Armen
-Die Armen ist ein Roman von Heinrich Mann. Der Text wurde im Sommer
-1916 in Oberbayern konzipiert, bis zum April 1917 in München
-geschrieben und erschien im August desselben Jahres.
+```bash
+❯ pixi run lint
+✨ Pixi task (lint in dev): ruff check
+All checks passed!
+
+❯ pixi run format
+✨ Pixi task (format in dev): ruff format
+7 files left unchanged
+
+❯ pixi run typing
+✨ Pixi task (typing in dev): mypy .
+Success: no issues found in 7 source files
+
+❯ pixi run test
+✨ Pixi task (test in test): pytest --cov -m 'not e2e'
+================================================================ test session starts ================================================================
+platform darwin -- Python 3.12.3, pytest-8.2.2, pluggy-1.5.0
+rootdir: /Users/leewoojin/scia/official_genailib_wl
+configfile: pyproject.toml
+plugins: cov-5.0.0, anyio-4.3.0, mock-3.14.0
+collected 14 items / 6 deselected / 8 selected
+
+tests/test_chat_responses.py ......                                                                                                           [ 75%]
+tests/test_console.py ..                                                                                                                      [100%]
+
+---------- coverage: platform darwin, python 3.12.3-final-0 ----------
+Name                                           Stmts   Miss  Cover
+------------------------------------------------------------------
+genailib_wl_folder/__init__.py                     8      4    50%
+genailib_wl_folder/test_openai_connection.py      17      4    76%
+tests/conftest.py                                  2      0   100%
+tests/test_chat_responses.py                     112     41    63%
+tests/test_console.py                             60     24    60%
+------------------------------------------------------------------
+TOTAL                                            199     73    63%
+
+
+========================================================== 8 passed, 6 deselected in 2.32s ==========================================================
+
+❯ pixi run test_e2e
+✨ Pixi task (test_e2e in test): pytest --cov -m 'e2e'
+================================================================ test session starts ================================================================
+platform darwin -- Python 3.12.3, pytest-8.2.2, pluggy-1.5.0
+rootdir: /Users/leewoojin/scia/official_genailib_wl
+configfile: pyproject.toml
+plugins: cov-5.0.0, anyio-4.3.0, mock-3.14.0
+collected 14 items / 8 deselected / 6 selected
+
+tests/test_chat_responses.py ....                                                                                                             [ 66%]
+tests/test_console.py ..                                                                                                                      [100%]
+
+---------- coverage: platform darwin, python 3.12.3-final-0 ----------
+Name                                           Stmts   Miss  Cover
+------------------------------------------------------------------
+genailib_wl_folder/__init__.py                     8      4    50%
+genailib_wl_folder/test_openai_connection.py      17      4    76%
+tests/conftest.py                                  2      0   100%
+tests/test_chat_responses.py                     112     61    46%
+tests/test_console.py                             60     23    62%
+------------------------------------------------------------------
+TOTAL                                            199     92    54%
+
+
+========================================================== 6 passed, 8 deselected in 4.54s ==========================================================
+
+❯ pixi run program
+✨ Pixi task (program in default): python3 genailib_wl_folder/genailib_wl_file.py
+Enter the model (default: gpt-3.5-turbo):
+Hello! How can I help you today?
+
+❯ pixi run docs
+✨ Pixi task (docs in dev): mkdir -p docs; cd notebooks; nbdev_docs; cp -r _docs/* ../docs/; cd ..
+Could not find /Users/leewoojin/scia/official_genailib_wl/notebooks/index.ipynb
+[1/4] index.qmd
+[2/4] console.ipynb
+[3/4] genailibrary.ipynb
+[4/4] testopenaiconnection.ipynb
+
+Output created: _docs/index.html
+
+❯ pixi run build
+✨ Pixi task (build in build): python -m build
+* Creating venv isolated environment...
+...
+Successfully built ...
+
+❯ pixi run publish
+✨ Pixi task (publish in build): python -m twine upload --repository testpypi dist/*
+Available on test pypi
+
+(Note that pixi run publish works only once with the given name and version due to their publishing policy)
+```

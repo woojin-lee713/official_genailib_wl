@@ -12,10 +12,30 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 class ChatResponse(BaseModel):
+    """
+    A model to represent the response from OpenAI's chat API.
+
+    Attributes:
+        text (str): The response text from OpenAI.
+    """
+
     text: str  # The response text from OpenAI
 
 
 def get_chat_responses(prompt, model="gpt-3.5-turbo", max_tokens=150, temperature=0.7):
+    """
+    Get chat responses from OpenAI's API based on the provided prompt.
+
+    Args:
+        prompt (str): The input text for the chat model.
+        model (str): The model to use for generating responses.
+        Default is "gpt-3.5-turbo".
+        max_tokens (int): The maximum number of tokens to generate. Default is 150.
+        temperature (float): The sampling temperature. Default is 0.7.
+
+    Returns:
+        str: The response text from OpenAI, or an error message if the API call fails.
+    """
     try:
         response = openai.chat.completions.create(
             model=model,
@@ -26,16 +46,17 @@ def get_chat_responses(prompt, model="gpt-3.5-turbo", max_tokens=150, temperatur
             max_tokens=max_tokens,
             temperature=temperature,
         )
-        # Convert the response to a list of tuples
         return response.choices[0].message.content
     except Exception as e:
         return f"An error occurred: {e}"
 
 
+# Version of the module
 __version__ = "1.35.7"
 
 if __name__ == "__main__":
-    prompt = "What is the capital of Mexico?"
+    # Example usage
+    prompt = input("Enter the prompt (default: Hello World!): ") or "Hello World!"
     model = input("Enter the model (default: gpt-3.5-turbo): ") or "gpt-3.5-turbo"
     response = get_chat_responses(prompt, model)
     print(response)

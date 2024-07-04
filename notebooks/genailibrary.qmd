@@ -1,0 +1,30 @@
+---
+title: Genailib_wl Docs
+---
+
+Welcome to the documentation for Genailib_wl! We are excited to have you here.
+
+This library allows you to interact with OpenAI's chat API with ease.
+
+The following is the documentation of the genailib_wl_file.py. Its holistic purpose is to connect to openai and
+return a response depending on the prompt you have given it.
+
+```bash
+❯ python genailib_wl_folder/genailib_wl_file.py
+Enter the prompt (default: Hello World!):
+Enter the model (default: gpt-3.5-turbo): gpt-4-turbo
+✨ Genailib_wl task: Generating response from OpenAI
+Hello! How can I assist you today?
+
+❯ python genailib_wl_folder/genailib_wl_file.py
+Enter the prompt (default: Hello World!): Tell me a joke
+Enter the model (default: gpt-3.5-turbo): gpt-3.5-turbo
+✨ Genailib_wl task: Generating response from OpenAI
+Why don't scientists trust atoms? Because they make up everything!
+
+❯ python genailib_wl_folder/genailib_wl_file.py
+Enter the prompt (default: Hello World!):
+Enter the model (default: gpt-3.5-turbo):
+✨ Genailib_wl task: Generating response from OpenAI
+Hello! How can I assist you today?
+```

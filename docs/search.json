@@ -1,52 +1,42 @@
 [
   {
-    "objectID": "wikipedia.html",
-    "href": "wikipedia.html",
-    "title": "Wikipedia Module",
+    "objectID": "testchatconnection.html",
+    "href": "testchatconnection.html",
+    "title": "OpenAI Connection Checkup Docs",
     "section": "",
-    "text": "from wikiapp.wikipedia import random_page, Page\n\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:7: UserWarning: Could not determine version of wikiapp_rd\n  warnings.warn(\"Could not determine version of wikiapp_rd\", stacklevel=1)\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:8: UserWarning: No package metadata was found for wikiapp_rd\n  warnings.warn(str(e), stacklevel=1)\nfrom nbdev import show_doc",
+    "text": "Welcome to the console documentation for interacting with OpenAI! This guide will help you understand how to use the command-line interface to interact with OpenAI’s chat API using a simple script.\n\nUsage\nTo run the console interface, you can use the following command:\n❯ python genailib_wl_folder/test_openai_connection.py\nConnection was Successful\nWhy don't scientists trust atoms? Because they make up everything!\n\n❯ python genailib_wl_folder/test_openai_connection.py\nConnection Failed\nAn error occurred: [Error message]",
     "crumbs": [
-      "Wikipedia Module"
-    ]
-  },
-  {
-    "objectID": "wikipedia.html#examples",
-    "href": "wikipedia.html#examples",
-    "title": "Wikipedia Module",
-    "section": "Examples",
-    "text": "Examples\n\npage = random_page()\nprint(\"TITLE\", page.title)\nprint(\"EXTRACT\", page.extract)\n\nTITLE Tiruppavai\nEXTRACT The Tiruppavai is a set of Tamil Hindu hymns attributed to the female poet-saint Andal.\n\n\nIf you do this agian, you will get another random page:\n\npage = random_page()\nprint(\"TITLE\", page.title)\nprint(\"EXTRACT\", page.extract)\n\nTITLE Myntra\nEXTRACT Myntra is an Indian fashion e-commerce company headquartered in Bengaluru, Karnataka, India. The company was founded in 2007-2008 to sell personalized gift items. In May 2014, Myntra.com was acquired by Flipkart.\n\n\nYou can change the language\n\npage = random_page(language=\"fr\")\nprint(\"TITLE\", page.title)\nprint(\"EXTRACT\", page.extract)\n\nTITLE La Soumission du prince Dipo Negoro au général De Kock\nEXTRACT La Soumission du prince Dipo Negoro au général De Kock est un tableau peint par Nicolaas Pieneman vers 1830-1835.",
-    "crumbs": [
-      "Wikipedia Module"
+      "OpenAI Connection Checkup Docs"
     ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Wikiapp Docs",
+    "title": "OpenAI Chatbot Library Source Code Using OpenAI API",
     "section": "",
-    "text": "Welcome to the documentation for Wikiapp! We are so glad top have you here.\nThis library will let you get random wikipedia excerpts, in any language.\nYeah we know it does not do much! But it is a start.\nwikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev ❯ wikiapp Potton–Hayden House The Potton–Hayden House is a historic house in Big Spring, Texas, USA. It was built in 1901. It has been listed on the National Register of Historic Places since April 14, 1975.\nwikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev ❯ wikiapp –language fr Wim Rijsbergen Wilhelmus « Wim » Gerardus Rijsbergen est un footballeur néerlandais. Il évolue au poste de défenseur puis se reconvertit comme entraîneur.\nwikiapp/notebooks on  main [!?] via ⨁ v1.4.550 via 🅒 wikiapp:dev ❯ wikiapp -1 de Die Armen Die Armen ist ein Roman von Heinrich Mann. Der Text wurde im Sommer 1916 in Oberbayern konzipiert, bis zum April 1917 in München geschrieben und erschien im August desselben Jahres.",
+    "text": "Welcome to the documentation for official_genailib_wl! We are excited to have you here.\nThis library allows you to interact with OpenAI’s chat API with ease.\nMake sure to set your .env file up with an appropriate openAI API code and make sure you know that this is a strictly private key! You can not have it leaked to github or dokku!\nVisit different pages to expereince what our chatbot can do! Yes, we know it is not as advanced but still, enjoy!\nBelow are commands you can run this repo in the terminal to generate tests and etc.\n❯ pixi run lint\n✨ Pixi task (lint in dev): ruff check\nAll checks passed!\n\n❯ pixi run format\n✨ Pixi task (format in dev): ruff format\n7 files left unchanged\n\n❯ pixi run typing\n✨ Pixi task (typing in dev): mypy .\nSuccess: no issues found in 7 source files\n\n❯ pixi run test\n✨ Pixi task (test in test): pytest --cov -m 'not e2e'\n================================================================ test session starts ================================================================\nplatform darwin -- Python 3.12.3, pytest-8.2.2, pluggy-1.5.0\nrootdir: /Users/leewoojin/scia/official_genailib_wl\nconfigfile: pyproject.toml\nplugins: cov-5.0.0, anyio-4.3.0, mock-3.14.0\ncollected 14 items / 6 deselected / 8 selected\n\ntests/test_chat_responses.py ......                                                                                                           [ 75%]\ntests/test_console.py ..                                                                                                                      [100%]\n\n---------- coverage: platform darwin, python 3.12.3-final-0 ----------\nName                                           Stmts   Miss  Cover\n------------------------------------------------------------------\ngenailib_wl_folder/__init__.py                     8      4    50%\ngenailib_wl_folder/test_openai_connection.py      17      4    76%\ntests/conftest.py                                  2      0   100%\ntests/test_chat_responses.py                     112     41    63%\ntests/test_console.py                             60     24    60%\n------------------------------------------------------------------\nTOTAL                                            199     73    63%\n\n\n========================================================== 8 passed, 6 deselected in 2.32s ==========================================================\n\n❯ pixi run test_e2e\n✨ Pixi task (test_e2e in test): pytest --cov -m 'e2e'\n================================================================ test session starts ================================================================\nplatform darwin -- Python 3.12.3, pytest-8.2.2, pluggy-1.5.0\nrootdir: /Users/leewoojin/scia/official_genailib_wl\nconfigfile: pyproject.toml\nplugins: cov-5.0.0, anyio-4.3.0, mock-3.14.0\ncollected 14 items / 8 deselected / 6 selected\n\ntests/test_chat_responses.py ....                                                                                                             [ 66%]\ntests/test_console.py ..                                                                                                                      [100%]\n\n---------- coverage: platform darwin, python 3.12.3-final-0 ----------\nName                                           Stmts   Miss  Cover\n------------------------------------------------------------------\ngenailib_wl_folder/__init__.py                     8      4    50%\ngenailib_wl_folder/test_openai_connection.py      17      4    76%\ntests/conftest.py                                  2      0   100%\ntests/test_chat_responses.py                     112     61    46%\ntests/test_console.py                             60     23    62%\n------------------------------------------------------------------\nTOTAL                                            199     92    54%\n\n\n========================================================== 6 passed, 8 deselected in 4.54s ==========================================================\n\n❯ pixi run program\n✨ Pixi task (program in default): python3 genailib_wl_folder/genailib_wl_file.py\nEnter the model (default: gpt-3.5-turbo):\nHello! How can I help you today?\n\n❯ pixi run docs\n✨ Pixi task (docs in dev): mkdir -p docs; cd notebooks; nbdev_docs; cp -r _docs/* ../docs/; cd ..\nCould not find /Users/leewoojin/scia/official_genailib_wl/notebooks/index.ipynb\n[1/4] index.qmd\n[2/4] console.ipynb\n[3/4] genailibrary.ipynb\n[4/4] testopenaiconnection.ipynb\n\nOutput created: _docs/index.html\n\n❯ pixi run build\n✨ Pixi task (build in build): python -m build\n* Creating venv isolated environment...\n...\nSuccessfully built ...\n\n❯ pixi run publish\n✨ Pixi task (publish in build): python -m twine upload --repository testpypi dist/*\nAvailable on test pypi\n\n(Note that pixi run publish works only once with the given name and version due to their publishing policy)",
     "crumbs": [
-      "Wikiapp Docs"
+      "OpenAI Chatbot Library Source Code Using OpenAI API"
+    ]
+  },
+  {
+    "objectID": "genailibrary.html",
+    "href": "genailibrary.html",
+    "title": "Genailib_wl Docs",
+    "section": "",
+    "text": "Welcome to the documentation for Genailib_wl! We are excited to have you here.\nThis library allows you to interact with OpenAI’s chat API with ease.\nThe following is the documentation of the genailib_wl_file.py. Its holistic purpose is to connect to openai and return a response depending on the prompt you have given it.\n❯ python genailib_wl_folder/genailib_wl_file.py\nEnter the prompt (default: Hello World!):\nEnter the model (default: gpt-3.5-turbo): gpt-4-turbo\n✨ Genailib_wl task: Generating response from OpenAI\nHello! How can I assist you today?\n\n❯ python genailib_wl_folder/genailib_wl_file.py\nEnter the prompt (default: Hello World!): Tell me a joke\nEnter the model (default: gpt-3.5-turbo): gpt-3.5-turbo\n✨ Genailib_wl task: Generating response from OpenAI\nWhy don't scientists trust atoms? Because they make up everything!\n\n❯ python genailib_wl_folder/genailib_wl_file.py\nEnter the prompt (default: Hello World!):\nEnter the model (default: gpt-3.5-turbo):\n✨ Genailib_wl task: Generating response from OpenAI\nHello! How can I assist you today?",
+    "crumbs": [
+      "Genailib_wl Docs"
     ]
   },
   {
     "objectID": "console.html",
     "href": "console.html",
-    "title": "Console Module",
+    "title": "Genailib_wl Console Docs",
     "section": "",
-    "text": "from wikiapp.console import main\n\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:7: UserWarning: Could not determine version of wikiapp_rd\n  warnings.warn(\"Could not determine version of wikiapp_rd\", stacklevel=1)\n/Users/reginagarfiasgarciatorres/summerscia/wikiapp/wikiapp/__init__.py:8: UserWarning: No package metadata was found for wikiapp_rd\n  warnings.warn(str(e), stacklevel=1)\nfrom nbdev import show_doc",
+    "text": "Welcome to the console documentation for Genailib_wl! This guide will help you understand how to use the command-line interface to interact with OpenAI’s chat API using the Genailib_wl library.\n\nUsage\nTo run the console interface, you can use the following command:\n❯ python genailib_wl_folder/console.py\n# -p Tell me something interesting\nConnection was Successful\n[Response from OpenAI based on the default prompt]\n\n❯ python genailib_wl_folder/console.py --prompt \"Tell me a joke\"\nConnection was Successful\nWhy don't scientists trust atoms? Because they make up everything!\n\n❯ python genailib_wl_folder/console.py -p \"What's the weather like today?\"\nConnection was Successful\nI'm sorry, I don't have access to real-time data. Please check a weather service.",
     "crumbs": [
-      "Console Module"
-    ]
-  },
-  {
-    "objectID": "console.html#examples",
-    "href": "console.html#examples",
-    "title": "Console Module",
-    "section": "Examples",
-    "text": "Examples\n\nCliRunner.invoke(main)",
-    "crumbs": [
-      "Console Module"
+      "Genailib_wl Console Docs"
     ]
   }
 ]
